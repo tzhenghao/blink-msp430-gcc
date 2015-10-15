@@ -8,7 +8,7 @@ A simple blinking application that demonstrates the use of the MSP430-gcc toolch
 Hardware
 --------
 1. Texas Instruments MSP430G2553 microcontroller
-2. USB Type A to Type B cable
+2. USB Type A to USB mini cable
 
 Installation
 ------------
