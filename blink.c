@@ -1,8 +1,9 @@
-#include  <msp430x20x3.h>
+#include <msp430.h>
 
 int main(void)
 {
-	WDTCTL = WDTPW + WDTHOLD;
+	// Stopping the watchdog timer.
+	WDTCTL = WDTPW | WDTHOLD;
 
 	// Set the direction of the pin.
 	P1DIR |= 0x01;
@@ -15,6 +16,7 @@ int main(void)
 		P1OUT ^= 0x01;
 
 		i = 0;
-		while (i++ != 99999);
+		while (i++ != 9999);
 	}
+	return 0;
 }

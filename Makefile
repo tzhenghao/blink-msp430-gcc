@@ -2,15 +2,20 @@
 # Makefile for the blink application.
 # Type 'make' and then whatever that follows to compile the code.
 
-all: blink.o
-	avrdude -c arduino -p m328p -P /dev/cu.usbmodem142321 -U flash:w:blink.hex
+OBJECTS=blink.o
+DEVICE=msp430g2553
+CC=msp430-elf-gcc
+GDB=msp430-elf-gdb
+SUPPORT_FILE_DIRECTORY=~/toolchains/ti/gcc/include
 
-blink.o: blink.c 
-	msp430-elf-gcc -mmcu=atmega328p -Wall -Os -o blink.elf blink.c
-	msp430-elf-objcopy -j .text -j .data -O ihex blink.elf blink.hex
+CFLAGS = -I $(SUPPORT_FILE_DIRECTORY) -mmcu=$(DEVICE) -O2 -g
+LFLAGS = -L $(SUPPORT_FILE_DIRECTORY)
+
+all: ${OBJECTS}
+	$(CC) $(CFLAGS) $(LFLAGS) $? -o $(DEVICE).out
 
 # make clean - remove .o files and the executable file.
 clean:
-	rm -f *.o blink.hex blink.elf 
+	rm -f *.o $(DEVICE).hex $(DEVICE).elf
 
 # That's all folks!
