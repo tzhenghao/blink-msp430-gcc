@@ -7,15 +7,15 @@ A simple blinking application that demonstrates the use of the MSP430-gcc toolch
 
 Hardware
 --------
-1. Texas Instruments MSP430G2553 microcontroller
-2. USB Type A to USB mini cable
+* Texas Instruments MSP430G2553 microcontroller
+* USB Type A to USB mini cable
 
 Installation
 ------------
 You will need:  
-1. msp430-gcc toolchain installed on your system. You can download it here.
-2. mspdebug to program
-3. Texas Instruments MSP430 microcontroller to perform the demo.
+* msp430-gcc toolchain installed on your system. You can download it here.
+* mspdebug to program
+* Texas Instruments MSP430 microcontroller to perform the demo.
 
 Support
 ------
